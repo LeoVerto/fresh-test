@@ -20,9 +20,8 @@ export default function Counter(props: CounterProps) {
       <input
         type="number"
         class={number}
-        onInput={e => {
-          const {value} = e.target;
-          setStep(value);
+        onChange={e => {
+          setStep(+e.target.value);
         }}
         value={step}
         disabled={!IS_BROWSER}
